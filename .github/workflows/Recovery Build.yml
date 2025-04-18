@@ -154,7 +154,6 @@ jobs:
 
     - name: Building recovery
       run: |
-        git clone -b android-12.0 https://github.com/omnirom/android_vendor_omni.git vendor/omni
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
